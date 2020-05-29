@@ -49,8 +49,8 @@ From: ubuntu:18.04
       && rm -rf /var/lib/apt/lists/*
 
     # Install python3 packages
-    pip install setuptools Cython
-    pip install --upgrade \
+    pip3 install setuptools Cython
+    pip3 install --upgrade \
       aplpy \
       astropy \
       Jinja2 \
