@@ -30,11 +30,13 @@ From: ubuntu:18.04
       emacs \
       wcslib-dev \
       wget \
+      libboost-python-dev \
       && rm -rf /var/lib/apt/lists/*
 
     # Install python3 packages
     pip3 install setuptools Cython
     pip3 install --upgrade \
+      wheel \
       aplpy \
       astropy \
       numpy \
@@ -63,7 +65,7 @@ From: ubuntu:18.04
     # Install pyBDSF
     wget https://github.com/lofar-astron/PyBDSF/archive/v1.9.2.tar.gz \
     && tar xvf v1.9.2.tar.gz && cd PyBDSF-1.9.2 \
-    && python3 setup.py install --prefix=/opt/lofarsoft/ \
+    && python3 setup.py install \
     && cd / && rm -rf v1.9.2.tar.gz PyBDSF-1.9.2
     
     
