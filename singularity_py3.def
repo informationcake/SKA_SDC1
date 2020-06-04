@@ -33,10 +33,10 @@ From: ubuntu:18.04
       liblog4cplus-dev \
       libncurses5-dev \
       libpng-dev \
-      libpython2.7-dev \
+      libpython3-dev \
       libreadline-dev \
       libxml2-dev \
-      libboost-python-dev \
+      libboost-python3-dev \
       libboost-numpy-dev \
       openssh-server \
       python3 \
