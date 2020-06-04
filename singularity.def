@@ -11,26 +11,42 @@ From: ubuntu:18.04
     export DEBIAN_FRONTEND=noninteractive
     apt-get update \
       && apt-get --yes install --no-install-recommends \
-      python3-wheel \
+      bison \
       build-essential \
       cmake \
       eog \
       flex \
       g++ \
       gcc \
+      gettext-base \
       gfortran \
       git \
-      libpython3.6-dev \
-      python3 \
-      python3-pip \
-      python3-tk \
-      python3-setuptools \
+      libarmadillo-dev \
+      libblas-dev \
+      libcfitsio-dev \
+      libfftw3-dev \
+      libgsl-dev \
+      libgtkmm-3.0-dev \
+      libhdf5-serial-dev \
+      liblapacke-dev \
+      liblog4cplus-1.1-9 \
+      liblog4cplus-dev \
+      libncurses5-dev \
+      libpng-dev \
+      libpython2.7-dev \
+      libreadline-dev \
+      libxml2-dev \
+      libboost-python-dev \
+      libboost-numpy-dev \
+      openssh-server \
+      python \
+      python-pip \
+      python-tk \
+      python-setuptools \
       subversion \
       vim \
-      emacs \
       wcslib-dev \
       wget \
-      libboost-python-dev \
       && rm -rf /var/lib/apt/lists/*
 
     # Install python3 packages
@@ -51,13 +67,12 @@ From: ubuntu:18.04
     # 
     mkdir /opt/soft/
     
-    # Install boost python 1.63 with python 2
+    # Install boost python 1.63 with python 3
     cd / \
     && wget https://dl.bintray.com/boostorg/release/1.63.0/source/boost_1_63_0.tar.bz2 \
     && tar xvf boost_1_63_0.tar.bz2 \
     && cd boost_1_63_0 \
     && ./bootstrap.sh \
-           --with-python=/usr/bin/python \
            --with-libraries=python,date_time,filesystem,system,program_options,test \
     && ./b2 install \
     && cd / && rm -r boost_1_63_0*
