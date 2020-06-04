@@ -81,12 +81,6 @@ From: ubuntu:18.04
     && ./b2 install \
     && cd / && rm -r boost_1_63_0*
     
-    # Install casacore data
-    mkdir -p /opt/lofarsoft/data \
-    && cd /opt/lofarsoft/data \
-    && wget ftp://anonymous@ftp.astron.nl/outgoing/Measures/WSRT_Measures.ztar \
-    && tar xvf WSRT_Measures.ztar \
-    && rm WSRT_Measures.ztar
     
     # Install pyBDSF
     wget https://github.com/lofar-astron/PyBDSF/archive/v1.9.2.tar.gz \
