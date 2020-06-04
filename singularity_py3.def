@@ -73,8 +73,8 @@ From: ubuntu:18.04
     && tar xvf boost_1_63_0.tar.bz2 \
     && cd boost_1_63_0 \
     && ./bootstrap.sh \
-           --with-python-version=3.6 \
-           --with-libraries=python,date_time,filesystem,system,program_options,test \
+           --with-python-version=3 \
+           --with-libraries=python3,date_time,filesystem,system,program_options,test \
     && ./b2 install \
     && cd / && rm -r boost_1_63_0*
     
