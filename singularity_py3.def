@@ -61,10 +61,7 @@ From: ubuntu:18.04
       umap-learn \
       datashader
       
-    
-    # 
-    mkdir /opt/soft/
-    
+        
     # Install boost python 1.63 with python 3
     cd / \
     && wget https://dl.bintray.com/boostorg/release/1.63.0/source/boost_1_63_0.tar.bz2 \
