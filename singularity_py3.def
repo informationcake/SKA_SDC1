@@ -37,7 +37,7 @@ From: ubuntu:18.04
       libreadline-dev \
       libxml2-dev \
       openssh-server \
-      python3 \
+      python3.6 \
       python3-pip \
       python3-tk \
       python3-setuptools \
@@ -45,11 +45,10 @@ From: ubuntu:18.04
       vim \
       wcslib-dev \
       wget \
-      && rm -rf /var/lib/apt/lists/*
 
     # Install python3 packages
-    pip3 install setuptools Cython
-    pip3 install --upgrade \
+    python3.6 -m pip install setuptools Cython
+    python3.6 -m pip install --upgrade \
       wheel \
       aplpy \
       astropy \
@@ -60,23 +59,23 @@ From: ubuntu:18.04
       scikit-learn \
       umap-learn \
       datashader
-      
-        
+
+    
     # Install boost python 1.63 with python 3
     cd / \
     && wget https://dl.bintray.com/boostorg/release/1.63.0/source/boost_1_63_0.tar.bz2 \
     && tar xvf boost_1_63_0.tar.bz2 \
     && cd boost_1_63_0 \
     && ./bootstrap.sh \
-           --with-python=/usr/bin/python3 \
+           --with-python=/usr/bin/python3.6 \
            --with-libraries=python,date_time,filesystem,system,program_options,test \
     && ./b2 install \
     && cd / && rm -r boost_1_63_0*
     
     # Install pyBDSF
-    wget https://github.com/lofar-astron/PyBDSF/archive/v1.9.2.tar.gz \
-    && tar xvf v1.9.2.tar.gz && cd PyBDSF-1.9.2 \
-    && python3 setup.py install \
-    && cd / && rm -rf v1.9.2.tar.gz PyBDSF-1.9.2
-    
-    
+    git clone https://github.com/informationcake/PyBDSF.git \
+    && cd PyBDSF \
+    && python3.6 -m pip install . \
+    && cd .. \
+    && rm -rf PyBDSF \
+    && echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}/usr/local/lib' >>$SINGULARITY_ENVIRONMENT 
