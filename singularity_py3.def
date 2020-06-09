@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ubuntu:18.04
 
 %help
-   Singularity image containing all required software to run SKA Science Data Challenge 1 solution (from Alex Clarke).
+   Singularity definition file that builds a container with Python3 and PyBDSF. Note that must use my forked PyBDSF repo (i have submitted a pull reques) with additional lines in the setup.py file that look for libboost_python3 files (from Alex Clarke).
 
 %environment
     
